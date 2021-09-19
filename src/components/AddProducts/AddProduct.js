@@ -9,46 +9,51 @@ const AddProduct = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const [productImageUrl, setProductImageUrl] = useState(null);
+
+  const [productImage, setProductImage] = useState(null);
 
   const onSubmit = (data) => {
-    const productData = {
+    const product = {
       name: data.name,
-      image: productImageUrl,
+      image: productImage,
     };
-        const url = "http://localhost:5000/addProduct";
+    const url = "http://localhost:5000/addProduct";
     fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(productData),
-    })
-      .then((res) => console.log("Data sent", res));
+      body: JSON.stringify(product),
+    }).then((response) => {
+      console.log("Data sent", response);
+    });
   };
 
-  const imageUpload = (event) => {
-    // console.log(event.target.files[0]);
+  const handleUploadImage = (event) => {
+    //   console.log(event.target.files[0]);
 
-    const products = new FormData();
-    products.set("key", "b278a2d4e17062aed0996c67bedbf6d1");
-    products.append("image", event.target.files[0]);
+    const productImageUrl = new FormData();
+
+    productImageUrl.set("key", "b278a2d4e17062aed0996c67bedbf6d1");
+    productImageUrl.append("image", event.target.files[0]);
 
     axios
-      .post("https://api.imgbb.com/1/upload", products)
-      .then((response) => setProductImageUrl(response.data.data.display_url))
-      .catch((error) => console.log(error));
+      .post("https://api.imgbb.com/1/upload", productImageUrl)
+      .then((response) => {
+        setProductImage(response.data.data.display_url);
+      })
+      .catch((error)=>{
+	console.log(error);
+});
   };
 
   return (
     <div>
-      <h1>Add products</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input name="name" defaultValue="New product add" {...register("example")} />
+        <input defaultValue="New product add" {...register("name")} />
         <br />
         <input
-            name="exampleRequired"
-        //   {...register("exampleRequired", { required: true })}
+          {...register("exampleRequired", { required: true })}
+          onChange={handleUploadImage}
           type="file"
-          onChange={imageUpload}
         />
         <br />
 
@@ -57,4 +62,5 @@ const AddProduct = () => {
     </div>
   );
 };
+
 export default AddProduct;
