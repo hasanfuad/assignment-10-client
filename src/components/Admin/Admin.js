@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const AddProduct = () => {
+const Admin = () => {
   const {
     register,
     handleSubmit,
@@ -28,7 +28,6 @@ const AddProduct = () => {
   };
 
   const handleUploadImage = (event) => {
-    //   console.log(event.target.files[0]);
 
     const productImageUrl = new FormData();
 
@@ -63,4 +62,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default Admin;

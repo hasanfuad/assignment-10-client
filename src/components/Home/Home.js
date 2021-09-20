@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import AddProduct from '../AddProducts/AddProduct';
+import Products from './Products/Products';
 
 const Home = () => {
 
@@ -11,11 +11,9 @@ const Home = () => {
     },[])
     return (
         <div>
-            <h1>This is Home</h1>
             {
-                displayData.map(data => <li key={data._id}>{data.name}</li>)
+                displayData.map(data => <Products data={data}/>)
             }
-            <AddProduct/>
         </div>
     );
 };
