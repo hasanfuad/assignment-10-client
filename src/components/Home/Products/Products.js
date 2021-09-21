@@ -1,6 +1,7 @@
 import Button from "@restart/ui/esm/Button";
 import React from "react";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Products.css";
 
 const Products = (props) => {
@@ -17,7 +18,6 @@ const Products = (props) => {
         marginTop: "40px",
       }}
     >
-      {/* <CardGroup> */}
       <Card className="product-item">
         <Card.Img variant="top" style={{ width: "200px" }} src={image} />
         <Card.Body>
@@ -28,11 +28,13 @@ const Products = (props) => {
           </Card.Text>
         </Card.Body>
         <Card.Footer className="product-item-btn">
-          <h2> <span style={{ marginRight: "9rem", color: "green"}}>$200 </span>
-          <Button className="btn btn-success">Buy Now</Button></h2>
+          <h2>
+            {" "}
+            <span style={{ marginRight: "9rem", color: "green" }}>$200 </span>
+            <Link to="/orders"><Button className="btn btn-success">Buy Now</Button></Link>
+          </h2>
         </Card.Footer>
       </Card>
-      {/* </CardGroup> */}
     </div>
   );
 };

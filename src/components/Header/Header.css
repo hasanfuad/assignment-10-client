@@ -23,5 +23,5 @@ nav a {
   padding: 25px;
 }
 nav a:hover {
-  background-color: gray;
+  background-color: rgba(240, 238, 238, 0.521);
 }
