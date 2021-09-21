@@ -1,3 +1,10 @@
+.brand-name {
+  margin-right: 105rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
 .header img {
   height: 100px;
 }

@@ -1,7 +1,18 @@
-div {
-  text-align: center;
+.product-item {
+  color: black;
+  display: flex;
+  border: none;
+  box-shadow: 5px 5px 20px rgb(161, 161, 161);
+  padding: 20px;
 }
 
-.product-item {
-  color: red;
+.product-item-btn {
+  background-color: white;
+  border: none;
+  text-align: right;
+}
+
+.product-item img {
+  position: relative;
+  left: 5rem;
 }

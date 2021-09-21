@@ -4,8 +4,10 @@ import './Header.css';
 
 
 const Header = () => {
+
     return (
         <div className="header">
+                <Link className="brand-name"><span style={{paddingTop: "2rem"}}>Food Bazar</span></Link>
             <nav>
                 <Link to="/home">Home</Link>
                 <Link to="/orders">Order Review</Link>
