@@ -3,6 +3,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/
 import firebase from "firebase/compat/app";
 import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
+import { useHistory, useLocation } from "react-router";
 import { UserContext } from "../../App";
 import firebaseConfig from "./firebase.config";
 
@@ -18,7 +19,11 @@ const Login = () => {
         email: ""
     });
 
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    let history = useHistory();
+    let location = useLocation();
+
+    let {from} = location.state || {from: {pathname: "/"}};
     
     const handleGoogleSignIn = () => {
       const provider = new GoogleAuthProvider();
@@ -34,6 +39,8 @@ const Login = () => {
           }
           setLoggedInUser(result.user);
           setUser(userInfo);
+          history.replace(from);
+
       }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -49,7 +56,6 @@ const Login = () => {
             name: "",
             email: ""
         }
-
         setUser(userInfo);
     }).catch((error) => {
         console.log(error);
