@@ -74,7 +74,7 @@ const Login = () => {
 
       {
           user.isLoggedIn ? <Button className="btn btn-bg-success mt-2 p-2" onClick={handleGoogleSignOut}>Sign Out</Button> : 
-          <Button className="btn btn-bg-primary mt-2 p-2" onClick={handleGoogleSignIn}>Sign in with google</Button>
+          <Button style={{width: "250px", height: "60px", backgroundColor: "green"}} className="btn btn-bg-primary mt-2 p-2" onClick={handleGoogleSignIn}>Sign in with google</Button>
       }
       
     </div>

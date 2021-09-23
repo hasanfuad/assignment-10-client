@@ -106,7 +106,7 @@ body {
 .description span {
   display: block;
   font-size: 14px;
-  color: #43484d;
+  color: black;
   font-weight: 400;
 }
 
@@ -116,7 +116,7 @@ body {
 .description span:last-child {
   font-weight: 300;
   margin-top: 8px;
-  color: #86939e;
+  color: black;
 }
 
 .quantity {
@@ -129,7 +129,7 @@ body {
   text-align: center;
   width: 32px;
   font-size: 16px;
-  color: #43484d;
+  color: black;
   font-weight: 300;
 }
 
@@ -158,6 +158,6 @@ input:focus {
   padding-top: 27px;
   text-align: center;
   font-size: 16px;
-  color: #43484d;
+  color: black;
   font-weight: 300;
 }

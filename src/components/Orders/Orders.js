@@ -1,13 +1,16 @@
 import React from "react";
-// import img from "../../../../../fresh-valley/Products/Chips.png";
+import { useParams } from "react-router";
 import "./Orders.css";
+import image1 from "./Products/Chips.png";
 
 const Orders = () => {
+    const {orderId} = useParams();
+    console.log(orderId.name);
   return (
     <div class="shopping-cart">
       {/* <!-- Title --> */}
 
-      <div class="title">Shopping Bag</div>
+      <div class="title">Check Out</div>
 
       {/* <!-- Product #1 --> */}
 
@@ -18,23 +21,23 @@ const Orders = () => {
         </div>
 
         <div class="image">
-          <img src="" alt="item1" />
+        <img style={{width: "100px"}} src={image1} alt="" />
         </div>
 
         <div class="description">
           <span>Common Projects</span>
-          <span>Bball High</span>  
-          <span>White</span>
+          {/* <span>Bball High</span>  
+          <span>White</span> */}
         </div>
 
         <div class="quantity">
-          <button class="plus-btn" type="button" name="button">
-            <img src="plus.svg" alt="" />
-          </button>
+            {/* <img style={{width: "100px"}} src={image1} alt="" /> */}
+          {/* <button class="plus-btn" type="button" name="button">
+          </button> */}
           <input type="text" name="name" value="1" />
-          <button class="minus-btn" type="button" name="button">
             <img src="minus.svg" alt="" />
-          </button>
+          {/* <button class="minus-btn" type="button" name="button">
+          </button> */}
         </div>
 
         <div class="total-price">$549</div>
@@ -48,23 +51,23 @@ const Orders = () => {
         </div>
 
         <div class="image">
-          <img src="item-2.png" alt="" />
+            <img style={{width: "100px"}} src={image1} alt="" />
         </div>
 
         <div class="description">
           <span>Maison Margiela</span>
-          <span>Future Sneakers</span>
-          <span>White</span>
+          {/* <span>Future Sneakers</span>
+          <span>White</span> */}
         </div>
 
         <div class="quantity">
-          <button class="plus-btn" type="button" name="button">
             <img src="plus.svg" alt="" />
-          </button>
+          {/* <button class="plus-btn" type="button" name="button">
+          </button> */}
           <input type="text" name="name" value="1" />
-          <button class="minus-btn" type="button" name="button">
             <img src="minus.svg" alt="" />
-          </button>
+          {/* <button class="minus-btn" type="button" name="button">
+          </button> */}
         </div>
 
         <div class="total-price">$870</div>
@@ -79,23 +82,21 @@ const Orders = () => {
         </div>
 
         <div class="image">
-          <img src="item-3.png" alt="" />
+            <img style={{width: "100px"}} src={image1} alt="" />
         </div>
 
         <div class="description">
-          <span>Our Legacy</span>
-          <span>Brushed Scarf</span>
           <span>Brown</span>
         </div>
 
         <div class="quantity">
-          <button class="plus-btn" type="button" name="button">
             <img src="plus.svg" alt="" />
-          </button>
+          {/* <button class="plus-btn" type="button" name="button">
+          </button> */}
           <input type="text" name="name" value="1" />
-          <button class="minus-btn" type="button" name="button">
             <img src="minus.svg" alt="" />
-          </button>
+          {/* <button class="minus-btn" type="button" name="button">
+          </button> */}
         </div>
 
         <div class="total-price">$349</div>
