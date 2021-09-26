@@ -5,9 +5,12 @@ const Home = () => {
 
     const [displayData, showDisplayData] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/displayProduct')
+        fetch('http://localhost:5000/products')
         .then(res => res.json())
-        .then(data => showDisplayData(data));
+        .then(data => {
+            console.log(data);
+            showDisplayData(data)
+        });
     },[])
     return (
         <div>

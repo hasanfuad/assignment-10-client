@@ -15,6 +15,7 @@ const Admin = () => {
   const onSubmit = (data) => {
     const product = {
       name: data.name,
+      price: data.price,
       image: productImage,
     };
     const url = "http://localhost:5000/addProduct";
@@ -47,7 +48,9 @@ const Admin = () => {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input defaultValue="New product add" {...register("name")} />
+        <input defaultValue="New product name" {...register("name")} />
+        <br/>
+        <input defaultValue="New product price" {...register("price")} />
         <br />
         <input
           {...register("exampleRequired", { required: true })}

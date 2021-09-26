@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./Products.css";
 
 const Products = (props) => {
-  const { image, name, _id} = props.data;
+  const { image, name, _id, key,price} = props.data;
 //   console.log(props.data);
   return (
     <div
@@ -31,8 +31,8 @@ const Products = (props) => {
         <Card.Footer className="product-item-btn">
           <h2>
             {" "}
-            <span style={{ marginRight: "9rem", color: "green" }}>$200 </span>
-            <Link to= {"/orders/"+_id} ><Button style={{width: "95px", height: "50px", backgroundColor: "green"}} className="btn btn-success">Buy Now</Button></Link>
+            <span style={{ marginRight: "9rem", color: "green" }}>${price} </span>
+            <Link to= {"/orders/"+key} ><Button style={{width: "95px", height: "50px", backgroundColor: "green"}} className="btn btn-success">Buy Now</Button></Link>
           </h2>
         </Card.Footer>
       </Card>
