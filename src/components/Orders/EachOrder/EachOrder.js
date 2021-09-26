@@ -4,32 +4,26 @@ import React from "react";
 
 const EachOrder = (props) => {
     const {name, image, price} = props.order;
-    console.log(name);
   return (
-    <div class="shopping-cart">
+    <div className="shopping-cart">
 
-      <div class="title">Check Out</div>
+      <div className="title">Check Out</div>
 
-      <div class="item">
-        {/* <div class="buttons">
-          <span class="delete-btn"></span>
-          <span class="like-btn"></span>
-        </div> */}
+      <div className="item">
 
-        <div class="image">
+        <div className="image">
           <img style={{ width: "100px" }} src={image} alt="" />
         </div>
 
-        <div class="description">
+        <div className="description">
           <span>{name}</span>
         </div>
 
-        <div class="quantity">
+        <div className="quantity">
           <p>1</p>
-          {/* <img src="minus.svg" alt="" /> */}
         </div>
 
-        <div class="total-price">${price}</div>
+        <div className="total-price">${price}</div>
       </div>
       <Button
         style={{
